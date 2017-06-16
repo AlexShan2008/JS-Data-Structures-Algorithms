@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 面向对象的编程 OOP
+     * 1. 对象就是普通的键值对集合；
+     * 2. 对象就是类的实例；
+     * 3. 一个类定义了对象的特征；
+     * 4. 我们会创建很多类来表示算法和数据结构。
+     * 5. 用构造函数实现类的功能。
+     * @type {{}}
+     */
+    let obj = {
+        name: {
+            first: 'Tony',
+            last: 'Shan'
+        },
+        address: ' Middle Earth'
+    };
+
+
+    /**
+     *
+     * 声明一个类，来表示书；
+     * @param title
+     * @param pages
+     * @param isbn
+     * @constructor
+     * 在原型方法中，printTitle的方法只会创建一次，在Book类的所有实例中共享。
+     * 在定义类的内部结构时声明，每个类的实例都会有一份该方法的副本。
+     *
+     * 重点:
+     * 使用原型方法可以节约内存和降低实例化的开销。
+     * 最好在声明公共方法时使用基于原型的方法。
+     * 生成私有方法时用在类定义时内部声明的方式；
+     * 这样其他实例不会访问到这个方法。
+     */
+    function Book(title, pages, isbn) {
+        this.title = title;
+        this.pages = pages;
+        this.isbn = isbn;
+
+//        变量声明时，添加方法；
+        this.printTitle = function () {
+//            中间调用回调函数时，需要改变this指向；
+//            方法1. let that = this;
+//            方法2. bind(this);
+
+            setTimeout(function () {
+                console.log(this.title);
+            }.bind(this), 1000);
+
+        }
+    }
+
+    /**
+     * 基于原型的方式添加方法；
+     * @type {Book}
+     */
+//    Book.prototype.printTitle = function () {
+//        console.log(this.title);
+//    };
+
+    let book = new Book('title', 'page', 'isbn');
+    book.printTitle();
+    console.log(book);
+
+
+</script>
+
+</body>
+</html>

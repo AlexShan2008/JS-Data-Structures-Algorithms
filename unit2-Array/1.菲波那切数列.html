@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 斐波那契数列
+     *
+     *求菲波那契数列的前20个数；
+     * 每一项的值等于前两项的值的和。
+     * @type {Array}
+     */
+    let fibonacci = [];
+    fibonacci[0] = 1;
+    fibonacci[1] = 2;
+
+    for (let i = 2, len = 20; i < len; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+
+    for (let i = 0, len = fibonacci.length; i < len; i++) {
+        console.log(fibonacci[i]);
+    }
+    console.log(fibonacci);
+</script>
+</body>
+</html>

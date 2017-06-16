@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="queue.js"></script>
+</head>
+<body>
+<script>
+    /**
+     * 队列
+     * queue FIFO
+     * 例子：排队
+     * 1.enqueue(element(s)) 增；入队：后进；向队列尾部添加一个（或多个）新的项；
+     * 2.dequeue()           删；出队：先出；移除队列的第一项（排在队列最前面的），并返回被移除的元素；
+     * 3.front() 返回队列的第一项，列队不变；类似于Stack中的peek；
+     * 4.isEmpty() 如果队列中不包含任何元素，返回TRUE，否则返回FALSE；
+     * 5.clear() 清空整个队列
+     * 6.size() 返回队列中元素的个数
+     *
+     */
+
+    let queue = new Queue();
+    console.log(queue.isEmpty());
+    console.log(queue);
+
+    queue.enqueue("John");
+    queue.enqueue("Jack");
+    queue.enqueue("Camila");
+    queue.print();
+    console.log(queue.size());
+    console.log(queue.isEmpty());
+    queue.dequeue();
+    queue.dequeue();
+    queue.print();
+
+
+
+</script>
+</body>
+</html>

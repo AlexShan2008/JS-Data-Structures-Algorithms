@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * stack 栈 Last In First Out
+     *
+     * 新增加的元素在栈顶；
+     * 最先进入的元素在栈底；
+     * 像餐厅里堆放的盘子;
+     *
+     * 用JS实现栈的功能；
+     * 1. 用数组来保存栈里的元素；
+     * 2. push(element(s)) 添加一个元素或几个元素到栈顶（）；
+     * 3. pop() 移除栈顶的元素，同时返回被移除的元素；
+     * 4. peek() 返回栈顶的元素；
+     * 5. isEmpty() 如果栈里没有任何元素，就返回TRUE，否则返回FALSE；
+     * 6. clear() 移除栈里所有元素；
+     * 7. size()  返回栈里的元素个数。
+     */
+
+
+    function Stack() {
+//        各种属性和方法的声明；
+        this.items = [];
+
+    }
+    Stack.prototype.push = function (element) {
+        this.items.push(element);
+    };
+    Stack.prototype.pop = function () {
+        return this.items.pop();
+    };
+    Stack.prototype.peek = function (element) {
+        return this.items[this.items.length - 1];
+    };
+    Stack.prototype.isEmpty = function () {
+        return this.items.length === 0;
+    };
+    Stack.prototype.clear = function () {
+        this.items = []
+    };
+    Stack.prototype.size = function () {
+        return this.items.length;
+    };
+    Stack.prototype.print = function () {
+        console.log(this.items.toString());
+    };
+
+    //    使用栈；
+    let stack = new Stack();
+    stack.push(5);
+    stack.push(8);
+    console.log(stack.peek());//8
+    stack.push(11);
+    console.log(stack.size());//3
+    console.log(stack.isEmpty());//false
+    stack.push(15);//[ 5, 8 ,11 ,15 ]
+    stack.pop();
+    stack.pop();
+    console.log(stack.size());//2
+    stack.print();//[ 5, 8 ]
+
+    //    将10进制数转换成二进制数；
+    function devideBy2(decNumber) {
+        let remStack = new Stack(),
+            rem,
+            binaryString = '';
+        while (decNumber > 0) {
+            rem = Math.floor(decNumber % 2);
+            remStack.push(rem);
+            decNumber = Math.floor(decNumber / 2);
+        }
+        while (!remStack.isEmpty()) {
+            binaryString += remStack.pop().toString();
+        }
+        return binaryString;
+    }
+    let result = devideBy2(10);
+//    console.log(result);//1010
+    let number = 10;
+//    console.log(number.toString(2));//将number转换成二进制（可以指定base）字符串；1010
+
+
+    //    将10进制数转换成任意进制数；
+    function baseConverter(decNumber, base) {
+        let remStack = new Stack(),
+            rem,
+            baseString = '',
+            digits = '0123456789ABCDEF ';
+        while (decNumber > 0) {
+            rem = Math.floor(decNumber % base);
+            remStack.push(rem);
+            decNumber = Math.floor(decNumber / base);
+        }
+        while (!remStack.isEmpty()) {
+            baseString += digits[remStack.pop()];
+        }
+        return baseString;
+    }
+
+    console.log(baseConverter(100345, 2));//11000011111111001
+    console.log(baseConverter(100345, 8));//303771
+    console.log(baseConverter(100345, 16));//187F9
+
+</script>
+</body>
+</html>

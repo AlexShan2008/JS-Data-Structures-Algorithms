@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 1. 真值假值检测
+     */
+    function testTruthy(val) {
+        return val ? console.log('truthy') : console.log("falsy")
+    }
+
+    //    testTruthy( true ); //true
+    //    testTruthy( false );//false
+    //    testTruthy( new Boolean(false));//false
+    //    testTruthy('');//false
+    //    testTruthy("Packet");//true
+    //    testTruthy(new String(''));//false
+    //    testTruthy(1);//true
+    //    testTruthy(0);//false
+    //    testTruthy(-1);//true
+    //    testTruthy(+0);//false
+    //    testTruthy(-0);//false
+    //    testTruthy(NaN);//false
+    //    testTruthy(new Number(NaN));//true 对象始终是true
+    //    testTruthy({});//true
+    //
+    //    let obj ={name:'Tony'};
+    //    testTruthy(obj);//true
+    //    testTruthy(obj.name);//true
+    //    testTruthy(obj.age);//false
+
+    /**
+     * 相等操作符
+     *
+     */
+
+//    testTruthy(null == undefined);//true
+//    testTruthy(undefined == null);//true
+
+
+//    let c =Number(true);
+//    let d =Number(false);
+//    console.log(c);//1
+//    console.log(d);//0
+
+//    testTruthy(a == c);//true
+//    testTruthy(a === b);//false
+//
+//    console.log(typeof b);
+
+    let a = {
+        name: "tony"
+    };
+    let b = {
+        name: "tony"
+    };
+
+    testTruthy(a == b);
+    testTruthy(a === b);
+
+
+</script>
+</body>
+</html>

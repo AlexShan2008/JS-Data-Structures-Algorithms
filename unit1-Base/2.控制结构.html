@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /**
+     * 条件语句
+     * 1. if ... else
+     */
+    let flag = 1;
+    if (flag === 1) {
+//        执行
+    } else {
+//        执行
+    }
+
+    /**
+     * 2. 三元运算符
+     * @type {number}
+     */
+    let num = 0;
+    num === 1 ? num-- : num++;
+
+    /**
+     * 3. 如果有多个分支语句，可以多次使用if...else
+     *
+     */
+    let day = 5;
+    if (day === 5) {
+        console.log(5);
+    } else if (day === 2) {
+        console.log(2);
+    } else if (day === 1) {
+        console.log(1);
+    } else {
+        console.log(0);
+    }
+
+    /**
+     * 4. switch case
+     * 如果有多个分支，可以使用
+     */
+
+    let month = 5;
+    switch (month) {
+        case 1:
+            console.log("January");
+            break;
+        case 2:
+            console.log("February");
+            break;
+        case 3:
+            console.log("March");
+            break;
+        default:
+            console.log("Month is not January , February , March");
+    }
+
+    /**
+     * 循环
+     * 1. for
+     * 2. while
+     * 3. do while
+     */
+    let a = 0;
+    while (a < 10) {
+        a++;
+    }
+    //    console.log(a);   //10
+    //    console.log(++a); //11
+    //    console.log(a);   //11
+    //    console.log(a++); //11
+    //    console.log(a);   //12
+    //
+    //    let b = 0;
+    //    do{
+    //        b++
+    //    } while (b < 10);
+    //    console.log(b);
+
+    let s = 0;
+    let e = ++s;
+    console.log(s); //1
+    console.log(e); //1
+
+    let c = 0;
+    let d = c++;
+    console.log(c); //1
+    console.log(d); //0
+
+
+</script>
+</body>
+</html>
