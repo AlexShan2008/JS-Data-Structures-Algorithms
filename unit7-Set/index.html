@@ -1,78 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .main {
+            widows: 500px;
+            height: 500px;
+        }
+    </style>
 </head>
+
 <body>
-<script>
-    function Set() {
-        /**
-         * Set
-         * 1. add(value) 向集合添加一个新的项；
-         * 2. remove(value) 从几个移除一个项；
-         * 3. has(value)如果值在集合中，返回true，否则返回false;
-         * 4. clear() 移除集合中的所有项；
-         * 5. size() 返回集合所包含元素的数量。与数组的Length属性类似；
-         * 6. values() 返回一个包含集中所有值的数组。
-         *
-         * @type {{}}
-         */
-        let items = {};
-        let length = 0;
+    <div class="main">
 
-        this.has = function (value) {
-            //所有JS对象都有hasOwnProperty()方法，返回一个表明对象是否具有特定属性的布尔值。
-//            return value in items;
-            return items.hasOwnProperty(value);
-        };
+    </div>
+    <script>
+        function Set() {
+            /**
+             * Set
+             * 1. add(value) 向集合添加一个新的项；
+             * 2. remove(value) 从几个移除一个项；
+             * 3. has(value)如果值在集合中，返回true，否则返回false;
+             * 4. clear() 移除集合中的所有项；
+             * 5. size() 返回集合所包含元素的数量。与数组的Length属性类似；
+             * 6. values() 返回一个包含集中所有值的数组。
+             *
+             * @type {{}}
+             */
+            let items = {};
+            let length = 0;
 
-        this.add = function (value) {
-            if (!this.has(value)) {
-                items[value] = value;
-                return true;
-            }
-            return false;
-        };
+            this.has = function (value) {
+                //所有JS对象都有hasOwnProperty()方法，返回一个表明对象是否具有特定属性的布尔值。
+                //            return value in items;
+                return items.hasOwnProperty(value);
+            };
 
-        this.remove = function (value) {
-            if (this.has(value)) {
-                delete items[value];
-                return true;
-            }
-            return false;
-        };
-
-        this.clear = function () {
-            items = {};
-        };
-
-        this.size = function () {
-            //兼容IE9以上；
-            //Object.keys() 会返回JS对象所有属性的数组。
-            return Object.keys(items).length;
-        };
-
-        this.SizeLegacy = function () {
-            for (let prop in items) {
-                // items.hasOwnProperty(prop) 验证自有的属性，因为会继承Object的共有属性。
-                if(items.hasOwnProperty(prop)) {
-                    ++length;
+            this.add = function (value) {
+                if (!this.has(value)) {
+                    items[value] = value;
+                    return true;
                 }
-            }
-            return length;
-        };
+                return false;
+            };
 
-        this.values = function () {
-          return Object.keys(items)
-        };
+            this.remove = function (value) {
+                if (this.has(value)) {
+                    delete items[value];
+                    return true;
+                }
+                return false;
+            };
+
+            this.clear = function () {
+                items = {};
+            };
+
+            this.size = function () {
+                //兼容IE9以上；
+                //Object.keys() 会返回JS对象所有属性的数组。
+                return Object.keys(items).length;
+            };
+
+            this.SizeLegacy = function () {
+                for (let prop in items) {
+                    // items.hasOwnProperty(prop) 验证自有的属性，因为会继承Object的共有属性。
+                    if (items.hasOwnProperty(prop)) {
+                        ++length;
+                    }
+                }
+                return length;
+            };
+
+            this.values = function () {
+                return Object.keys(items)
+            };
 
 
 
-    }
+        }
 
 
 
-</script>
+    </script>
 </body>
+
 </html>
