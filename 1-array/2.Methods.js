@@ -44,7 +44,7 @@ Array(1, 2, 3);    // [1, 2, 3]
 2. 删除元素 pop()  shift()
 3. 修改数组 splice(start[, deleteCount[, item1[, item2[, ...]]]])
 4. 截取数组 slice(begin[, end])
-5. 拼接数组 concat()
+5. 拼接数组 concat()    arr1.concat(arr2)   or   [...arr1,...arr2]
 */
 
 // 1. push() 增加末尾元素

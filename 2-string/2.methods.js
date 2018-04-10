@@ -4,8 +4,8 @@
 2. +          推荐用'+'进行字符串拼接
 3. slice() 截取
 4. split() 铰接
-5. substring() 截取子字符串
-6. substr() 截取子字符串
+5. substring(indexStart[, indexEnd]) 截取子字符串
+6. substr(start[, length]) 截取子字符串
 7. replace() 替换元素
 */
 
@@ -198,5 +198,25 @@ var matches_array = str.match(regexp);
 console.log(matches_array);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 
+
+/* 
+* 五、去空白
+1. str.trim()
+*/
+
+// The trim() method removes whitespace from both ends of a string. Whitespace in this context is all the whitespace characters (space, tab, no-break space, etc.) and all the line terminator characters (LF, CR, etc.).
   
 
+/* 
+* 六、判断开头
+1. str.startsWith(searchString [, position]);
+*/
+
+// The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
+
+// Polyfill
+if (!String.prototype.startsWith) {
+	String.prototype.startsWith = function(search, pos) {
+		return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+	};
+}
