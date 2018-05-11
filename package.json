@@ -1,0 +1,23 @@
+{
+  "name": "JS-Data-Structures-Algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexShan2008/JS-Data-Structures-Algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexShan2008/JS-Data-Structures-Algorithms/issues"
+  },
+  "homepage": "https://github.com/AlexShan2008/JS-Data-Structures-Algorithms#readme",
+  "devDependencies": {
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
